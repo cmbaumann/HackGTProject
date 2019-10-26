@@ -1,0 +1,534 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20191026052427)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "school" varchar, "year" varchar, "major" varchar, "front_end1" integer, "back_end1" integer, "design1" integer, "machine_learning1" integer, "java1" integer, "python1" integer, "ruby1" integer, "javascript1" integer, "C1" integer, "Cplusplus1" integer, "Csharp1" integer, "html1" integer, "css1" integer, "app_dev1" integer, "web_dev1" integer, "hardware1" integer, "software_dev1" integer, "commitment" integer, "year2" varchar, "java2" integer, "python2" integer, "ruby2" integer, "javascript2" integer, "C2" integer, "Cplusplus2" integer, "Csharp2" integer, "html2" integer, "css2" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191026052427"]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-26 05:24:47.430281"], ["updated_at", "2019-10-26 05:24:47.430281"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/new" for ::1 at 2019-10-26 01:25:59 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (113.5ms)
+  Rendered users/new.html.erb within layouts/application (125.4ms)
+Completed 200 OK in 1775ms (Views: 1732.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-10-26 01:40:31 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/cmbaumann/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/cmbaumann/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (8.2ms)
+Completed 200 OK in 46ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 01:40:37 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 453ms (Views: 433.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 01:40:39 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.4ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/mnt/c/Users/cassi/Documents/GitHub/hack2/app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+...homore", "Junior", "Senior"] id: :user_year );@output_buffer...
+...                             ^~):
+  
+app/views/users/_form.html.erb:28: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__4203663062670284075_70213026546560'
+Started GET "/users/new" for ::1 at 2019-10-26 01:41:01 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/new.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/mnt/c/Users/cassi/Documents/GitHub/hack2/app/views/users/_form.html.erb:28: syntax error, unexpected ')', expecting =>
+...phomore", "Junior", "Senior"] );@output_buffer.safe_append='
+...                              ^
+/mnt/c/Users/cassi/Documents/GitHub/hack2/app/views/users/_form.html.erb:181: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/mnt/c/Users/cassi/Documents/GitHub/hack2/app/views/users/_form.html.erb:183: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/mnt/c/Users/cassi/Documents/GitHub/hack2/app/views/users/_form.html.erb:185: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/users/_form.html.erb:28: syntax error, unexpected ')', expecting =>
+app/views/users/_form.html.erb:181: syntax error, unexpected end, expecting ')'
+app/views/users/_form.html.erb:183: syntax error, unexpected ensure, expecting ')'
+app/views/users/_form.html.erb:185: syntax error, unexpected end, expecting ')'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__4203663062670284075_70213030097540'
+Started GET "/users/new" for ::1 at 2019-10-26 01:42:16 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (78.5ms)
+  Rendered users/new.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 118ms (Views: 115.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 01:44:32 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (51.8ms)
+  Rendered users/new.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 92ms (Views: 90.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-10-26 01:46:48 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FluD0qR0tr/6FokX0dhOAYy43ZZqbqpRqqZpIleEO3zcAJ+o85xwIgpdbZLGj0+wDgmVovD21X0mEEesqjDMNw==", "user"=>{"name"=>"", "school"=>"", "year"=>"Freshman", "major"=>"", "front_end1"=>"1", "back_end1"=>"", "design1"=>"", "machine_learning1"=>"", "java1"=>"", "python1"=>"", "ruby1"=>"", "javascript1"=>"", "C1"=>"", "Cplusplus1"=>"", "Csharp1"=>"", "html1"=>"", "css1"=>"", "app_dev1"=>"", "web_dev1"=>"", "hardware1"=>"", "software_dev1"=>"", "commitment"=>"", "year2"=>"", "java2"=>"", "python2"=>"", "ruby2"=>"", "javascript2"=>"", "C2"=>"", "Cplusplus2"=>"", "Csharp2"=>"", "html2"=>"", "css2"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "school", "year", "major", "front_end1", "year2", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", ""], ["school", ""], ["year", "Freshman"], ["major", ""], ["front_end1", 1], ["year2", ""], ["created_at", "2019-10-26 05:46:48.283997"], ["updated_at", "2019-10-26 05:46:48.283997"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 22ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/users/1" for ::1 at 2019-10-26 01:46:48 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 63ms (Views: 31.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2019-10-26 01:46:59 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.9ms)
+  Rendered users/edit.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 47ms (Views: 38.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 01:47:01 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 39ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 01:47:06 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.1ms)
+  Rendered users/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 56ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-10-26 01:47:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7UBmtMTaWy0PAlCxTdLIwU0SVsbDMq0jSdisiOZalvFycGZquixjno0f8d4h9aSOjwo2bZhurR28iQOemA+UzQ==", "user"=>{"name"=>"", "school"=>"", "year"=>"Freshman", "major"=>"", "front_end1"=>"0", "back_end1"=>"", "design1"=>"", "machine_learning1"=>"", "java1"=>"", "python1"=>"", "ruby1"=>"", "javascript1"=>"", "C1"=>"", "Cplusplus1"=>"", "Csharp1"=>"", "html1"=>"", "css1"=>"", "app_dev1"=>"", "web_dev1"=>"", "hardware1"=>"", "software_dev1"=>"", "commitment"=>"", "year2"=>"", "java2"=>"", "python2"=>"", "ruby2"=>"", "javascript2"=>"", "C2"=>"", "Cplusplus2"=>"", "Csharp2"=>"", "html2"=>"", "css2"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "school", "year", "major", "front_end1", "year2", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", ""], ["school", ""], ["year", "Freshman"], ["major", ""], ["front_end1", 0], ["year2", ""], ["created_at", "2019-10-26 05:47:11.261508"], ["updated_at", "2019-10-26 05:47:11.261508"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 34ms (ActiveRecord: 22.8ms)
+
+
+Started GET "/users/2" for ::1 at 2019-10-26 01:47:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 37ms (Views: 30.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 01:47:25 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 53ms (Views: 47.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for ::1 at 2019-10-26 01:47:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 58ms (Views: 50.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/1" for ::1 at 2019-10-26 01:48:29 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1IONRB9JBVoUSdo2BtlLckMY0dJmSJwa17STaXzTeuge2JE+SKHDx+QCPrMRjkrDwamZ5vzQ4zZbAr3ngWeNow==", "id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 42ms (ActiveRecord: 31.5ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 01:48:29 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 53ms (Views: 44.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/2" for ::1 at 2019-10-26 01:48:37 -0400
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cP7FK7qbUnCMxL+lIANePJ/weDWw/tf+MndyAaBYvni6pdlR7XOU7XyPWyA3VF+NHUEwASpmqNK+wVyPXexJMw==", "id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 25ms (ActiveRecord: 17.5ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 01:48:37 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 45ms (Views: 35.1ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 01:52:47 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 81ms (Views: 77.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 01:52:48 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (9.3ms)
+  Rendered users/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 01:53:53 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.7ms)
+  Rendered users/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 74ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:32:13 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (268.3ms)
+  Rendered users/new.html.erb within layouts/application (274.3ms)
+Completed 500 Internal Server Error in 400ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `ckeck_box' for #<ActionView::Helpers::FormBuilder:0x00007f48f09c4470>
+Did you mean?  check_box):
+    56:   </div>
+    57: 
+    58:   <div class="field">
+    59:     <p>Python<%= form.ckeck_box :python1 %></p>
+    60:   </div>
+    61: 
+    62:   <div class="field">
+  
+app/views/users/_form.html.erb:59:in `block in _app_views_users__form_html_erb___3334889949322579427_69975625474740'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___3334889949322579427_69975625474740'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___2621872142944192237_69975625380540'
+Started GET "/users/new" for ::1 at 2019-10-26 08:32:35 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (18.5ms)
+  Rendered users/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 826ms (Views: 822.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:33:54 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (15.0ms)
+  Rendered users/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 94ms (Views: 87.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:34:30 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (30.9ms)
+  Rendered users/new.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 180ms (Views: 174.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:38:36 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (16.3ms)
+  Rendered users/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 93ms (Views: 88.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:39:30 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (10.3ms)
+  Rendered users/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 81ms (Views: 76.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:47:15 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 82ms (Views: 76.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:47:53 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.0ms)
+  Rendered users/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 92ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:48:06 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.8ms)
+  Rendered users/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 89ms (Views: 86.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:48:23 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (18.9ms)
+  Rendered users/new.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 88ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 08:49:00 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.1ms)
+  Rendered users/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 65ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 09:02:07 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (31.7ms)
+  Rendered users/new.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 159ms (Views: 86.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 09:03:01 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (12.0ms)
+  Rendered users/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 71ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-10-26 09:03:05 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aX+YVp5Zll20FSOW6hbBqfSkJSpQRzzYDiQOZbj5tJKjJIQsybFQwERexxP9QcAYdhVtHsrfQ/SCkiDrRU1D2Q==", "user"=>{"name"=>"", "school"=>"", "year"=>"Freshman", "major"=>"", "front_end1"=>"0", "back_end1"=>"0", "design1"=>"0", "machine_learning1"=>"0", "java1"=>"0", "python1"=>"0", "ruby1"=>"0", "javascript1"=>"0", "C1"=>"0", "Cplusplus1"=>"0", "Csharp1"=>"0", "html1"=>"0", "css1"=>"0", "app_dev1"=>"0", "web_dev1"=>"0", "hardware1"=>"0", "software_dev1"=>"", "commitment"=>"1", "year2"=>"Freshman", "java2"=>"0", "python2"=>"0", "ruby2"=>"0", "javascript2"=>"0", "C2"=>"0", "Cplusplus2"=>"0", "Csharp2"=>"0", "html2"=>"0", "css2"=>"0"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "school", "year", "major", "front_end1", "back_end1", "design1", "machine_learning1", "java1", "python1", "ruby1", "javascript1", "C1", "Cplusplus1", "Csharp1", "html1", "css1", "app_dev1", "web_dev1", "hardware1", "commitment", "year2", "java2", "python2", "ruby2", "javascript2", "C2", "Cplusplus2", "Csharp2", "html2", "css2", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", ""], ["school", ""], ["year", "Freshman"], ["major", ""], ["front_end1", 0], ["back_end1", 0], ["design1", 0], ["machine_learning1", 0], ["java1", 0], ["python1", 0], ["ruby1", 0], ["javascript1", 0], ["C1", 0], ["Cplusplus1", 0], ["Csharp1", 0], ["html1", 0], ["css1", 0], ["app_dev1", 0], ["web_dev1", 0], ["hardware1", 0], ["commitment", 1], ["year2", "Freshman"], ["java2", 0], ["python2", 0], ["ruby2", 0], ["javascript2", 0], ["C2", 0], ["Cplusplus2", 0], ["Csharp2", 0], ["html2", 0], ["css2", 0], ["created_at", "2019-10-26 13:03:05.797521"], ["updated_at", "2019-10-26 13:03:05.797521"]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 31ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:03:05 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 57ms (Views: 42.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:04:15 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:04:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 56ms (Views: 49.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:04:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 84ms (Views: 76.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:05:34 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 73ms (Views: 68.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:05:53 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    162: </p>
+    163: 
+    164: <p>
+    165:   <%= @user.print %>
+    166: </p>
+    167: 
+    168: <%= link_to 'Edit', edit_user_path(@user) %> |
+  
+app/models/user.rb:3:in `print'
+app/models/user.rb:4:in `print'
+app/views/users/show.html.erb:165:in `_app_views_users_show_html_erb___3248545551949399162_69975564340920'
+Started GET "/users/3" for ::1 at 2019-10-26 09:06:13 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 189ms (Views: 56.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:07:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `compare' for :user:Symbol):
+    162: </p>
+    163: 
+    164: <p>
+    165:   <%= :user.compare %>
+    166: </p>
+    167: 
+    168: <%= link_to 'Edit', edit_user_path(@user) %> |
+  
+app/views/users/show.html.erb:165:in `_app_views_users_show_html_erb___3248545551949399162_69975561190180'
+Started GET "/users/3" for ::1 at 2019-10-26 09:11:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 09:12:28 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 64ms (Views: 47.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 09:12:31 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (7.2ms)
+  Rendered users/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-10-26 09:18:25 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (37.6ms)
+  Rendered users/new.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 100ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-10-26 09:18:28 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ONXG4rrMovdbCDM/LMPZVWD5Js/DYVuWFp+aEZWmngbyjtqY7SRkaqtD17o7lNjk4khu+1n5JLqaKbSfaBJpTQ==", "user"=>{"name"=>"", "school"=>"", "year"=>"Freshman", "major"=>"", "front_end1"=>"0", "back_end1"=>"0", "design1"=>"0", "machine_learning1"=>"0", "java1"=>"0", "python1"=>"0", "ruby1"=>"0", "javascript1"=>"0", "C1"=>"0", "Cplusplus1"=>"0", "Csharp1"=>"0", "html1"=>"0", "css1"=>"0", "app_dev1"=>"0", "web_dev1"=>"0", "hardware1"=>"0", "software_dev1"=>"", "commitment"=>"1", "year2"=>"Freshman", "java2"=>"0", "python2"=>"0", "ruby2"=>"0", "javascript2"=>"0", "C2"=>"0", "Cplusplus2"=>"0", "Csharp2"=>"0", "html2"=>"0", "css2"=>"0"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "school", "year", "major", "front_end1", "back_end1", "design1", "machine_learning1", "java1", "python1", "ruby1", "javascript1", "C1", "Cplusplus1", "Csharp1", "html1", "css1", "app_dev1", "web_dev1", "hardware1", "commitment", "year2", "java2", "python2", "ruby2", "javascript2", "C2", "Cplusplus2", "Csharp2", "html2", "css2", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", ""], ["school", ""], ["year", "Freshman"], ["major", ""], ["front_end1", 0], ["back_end1", 0], ["design1", 0], ["machine_learning1", 0], ["java1", 0], ["python1", 0], ["ruby1", 0], ["javascript1", 0], ["C1", 0], ["Cplusplus1", 0], ["Csharp1", 0], ["html1", 0], ["css1", 0], ["app_dev1", 0], ["web_dev1", 0], ["hardware1", 0], ["commitment", 1], ["year2", "Freshman"], ["java2", 0], ["python2", 0], ["ruby2", 0], ["javascript2", 0], ["C2", 0], ["Cplusplus2", 0], ["Csharp2", 0], ["html2", 0], ["css2", 0], ["created_at", "2019-10-26 13:18:28.327215"], ["updated_at", "2019-10-26 13:18:28.327215"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 29ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/users/4" for ::1 at 2019-10-26 09:18:28 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 32.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2019-10-26 09:18:51 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 57ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for ::1 at 2019-10-26 09:18:55 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 51ms (Views: 42.5ms | ActiveRecord: 0.9ms)
+
+
